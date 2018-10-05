@@ -1,0 +1,26 @@
+.card {
+	// background: #fff;
+	border-radius: 2px;
+	height: 250px;
+	margin: 1%;
+	position: relative;
+	width: 23%;
+	box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+	text-align: left;
+
+	.img-container {
+		margin-top: 5%;
+		height: 90%;
+		overflow: hidden;
+		text-align: center;
+		background:#6CADDC;
+		cursor: pointer;
+
+		img {
+			width: 100%
+		}
+	}
+	.img-container:hover {
+		background: #d50000;
+	}
+}
