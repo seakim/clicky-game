@@ -1,0 +1,19 @@
+$color: black;
+
+@mixin transform($property) {
+  -webkit-transform: $property;
+      -ms-transform: $property;
+          transform: $property;
+}
+.sampleMixin { @include transform(rotate(30deg)); }
+
+@mixin title {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.title { @include title}
+
+
+

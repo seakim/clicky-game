@@ -1,0 +1,9 @@
+.sampleMixin {
+  -webkit-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  transform: rotate(30deg); }
+
+.title {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 50px; }
