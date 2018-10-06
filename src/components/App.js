@@ -1,14 +1,15 @@
 import React, { Component, Fragment } from "react";
 import list from "../cards.json";
-import './App.css';
-
 import CardList from "./cards/card_list";
+import './App.css';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       cards: [],
+      selectedCards: [],
+      topScore: 0
     };
   };
 
@@ -26,8 +27,21 @@ class App extends Component {
     this.state.cards.splice(id,1);
     const cards = this.state.cards
     cards.push(list[Math.floor(Math.random() * list.length)])
-
     this.setState({ cards });
+
+    let uniq = arr => Array.from(new Set(arr));
+    // same as above
+    // let uniq = arr => [...new Set(arr)];
+    console.log(this.state.selectedCards)
+    console.log(uniq(this.state.selectedCards))
+
+    // if (this.state.selectedCards !== uniq(this.state.selectedCards)) {
+    //   alert(`Your score is ${this.state.selectedCards.length - 1}`)
+    //   this.setState({ 
+    //     topScore: this.state.selectedCards.length - 1,
+    //     selectedCards: []
+    //   });
+    // }
   };
 
   render() {
@@ -36,8 +50,10 @@ class App extends Component {
         <h1 className="title">Clicky Game</h1>
         <CardList 
           removeCard = {this.removeCard}
+          selectedCards = {this.state.selectedCards}
           cards = {this.state.cards}
         />
+        <h4 className="score">Score: {this.state.selectedCards.length} | Top Score: {this.state.topScore}</h4>
     </Fragment>
     );
   }

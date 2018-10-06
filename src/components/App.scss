@@ -8,13 +8,15 @@ $background: #ECEFF1;
 }
 .sampleMixin { @include transform(rotate(30deg)); }
 
-@mixin title {
+@mixin text {
   width: 100%;
   text-align: center;
-  margin-bottom: 30px;
   text-decoration: underline;
 }
-.title { @include title}
+.title {@include text}
+.score {
+  text-align: center;
+}
 body {
   background: $background;
 }

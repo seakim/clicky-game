@@ -6,8 +6,10 @@
 .title {
   width: 100%;
   text-align: center;
-  margin-bottom: 30px;
   text-decoration: underline; }
+
+.score {
+  text-align: center; }
 
 body {
   background: #ECEFF1; }

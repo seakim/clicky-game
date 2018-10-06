@@ -9,12 +9,16 @@ const CardList = (props) => {
 				removeCard = {props.removeCard}
 				key = {index}
 				card = {card}
-				clicked = {card.clicked}
+				selectedCards = {props.selectedCards}
 			/>
 		)
 	})
 
-	return <ul className="row">{CardItems}</ul>
+	return (
+		<div className="container">
+			<ul className="row">{CardItems}</ul>
+		</div>
+	)
 }
 
 export default CardList;
