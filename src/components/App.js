@@ -35,13 +35,21 @@ class App extends Component {
     console.log(this.state.selectedCards)
     console.log(uniq(this.state.selectedCards))
 
-    // if (this.state.selectedCards !== uniq(this.state.selectedCards)) {
-    //   alert(`Your score is ${this.state.selectedCards.length - 1}`)
-    //   this.setState({ 
-    //     topScore: this.state.selectedCards.length - 1,
-    //     selectedCards: []
-    //   });
-    // }
+    if (this.state.selectedCards.length !== uniq(this.state.selectedCards).length) {
+      alert(`Your score is ${uniq(this.state.selectedCards).length}`)
+      //set card state back to empty
+      const getTopScore = () => {
+        if (this.state.topScore < uniq(this.state.selectedCards).length) {
+          return uniq(this.state.selectedCards).length;
+        } else {
+          return this.state.topScore;
+        }
+      }
+      this.setState({ 
+        topScore: getTopScore(),
+        selectedCards: []
+      });
+    }
   };
 
   render() {
